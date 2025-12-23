@@ -4,7 +4,7 @@
   <name>rfid_llrp</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="lokus@todo.todo">lokus</maintainer>
+  <maintainer email="bobkatt@orcon.net.nz">lokus</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
