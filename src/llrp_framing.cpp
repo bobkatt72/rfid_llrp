@@ -42,9 +42,9 @@ namespace llrp
         const uint32_t message_id        = read_be_u32(hdr_bytes.data() + 6);
 
         Header h;
-        h.version      = static_cast<uint8_t>((ver_type_reserved >> 13) & 0x7);   // top 3 bits
-        h.message_type = static_cast<uint16_t>((ver_type_reserved >> 3) & 0x3FF); // next 10 bits
-        h.reserved     = static_cast<uint8_t>(ver_type_reserved & 0x7);           // low 3 bits
+        h.reserved     = static_cast<uint8_t>((ver_type_reserved >> 13) & 0x7);  // top 3 bits
+        h.version      = static_cast<uint8_t>((ver_type_reserved >> 10) & 0x7);  // next 3 bits
+        h.message_type = static_cast<uint16_t>(ver_type_reserved & 0x03FF);      // low 10 bits
         h.length       = length;
         h.message_id   = message_id;
 

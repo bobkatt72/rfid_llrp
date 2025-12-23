@@ -20,8 +20,8 @@ bool parse_llrp_status(const std::vector<uint8_t>& payload, LlrpStatus& out)
 
     const uint16_t type_and_reserved = read_be_u16(payload.data() + 0);
 
-    out.param_type     = static_cast<uint16_t>((type_and_reserved >> 6) & 0x03FF);
-    out.param_reserved = static_cast<uint16_t>(type_and_reserved & 0x003F);
+    out.param_reserved = static_cast<uint16_t>((type_and_reserved >> 10) & 0x003F);
+    out.param_type     = static_cast<uint16_t>(type_and_reserved & 0x03FF);
     out.param_len      = read_be_u16(payload.data() + 2);
     out.status_code    = read_be_u16(payload.data() + 4);
     out.reserved       = read_be_u16(payload.data() + 6);
